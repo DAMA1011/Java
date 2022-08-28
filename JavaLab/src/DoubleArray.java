@@ -21,9 +21,9 @@ public class DoubleArray {
 			}
 
 			sum += x[i]; // 求總和
-
-			avg = sum / x.length; // 求平均值
 		}
+		avg = sum / x.length; // 求平均值
+
 		System.out.printf("長度 = %d%n", x.length);
 		System.out.printf("總和 = %.1f%n", sum);
 		System.out.printf("平均值 = %.3f%n", avg);
