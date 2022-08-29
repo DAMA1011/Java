@@ -6,7 +6,7 @@ package reference;
 public class PassValueTest {
     public static void main(String[] args) {
         int a = 10;
-        System.out.println("呼叫print前 a值 ="+a);
+        System.out.println("呼叫print前 a值 = "+a);
         print(a);
         System.out.println("呼叫print後 a值 = "+a);
     }
