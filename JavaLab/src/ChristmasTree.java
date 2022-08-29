@@ -9,14 +9,14 @@ public class ChristmasTree {
 		//******* 第四層: 0 空格，7 星
 
 		int n = 15; // 輸入層數
-		
+
 		for (int line = 1; line <= n; line += 1) {
-			
+
 			// printspace
 			for (int space = n - line; space > 0; space -= 1) {
 				System.out.print(" ");
 			}
-			
+
 			// printstar
 			// for (int star = 1 + (line - 1) * 2; star > 0; star -= 1) {
 			for (int star = 1; star <= 1 + (line - 1) * 2; star += 1) {

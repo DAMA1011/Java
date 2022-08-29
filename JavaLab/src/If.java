@@ -31,14 +31,14 @@ public class If {
 		{
 			int classroom = 204;
 			switch (classroom) {
-				case 204:
-					System.out.println("人數大於等於30人");
-					break;
-				case 305:
-					System.out.println("人數小於30大於等於20人");
-					break;
-				default:
-					System.out.println("其他");
+			case 204:
+				System.out.println("人數大於等於30人");
+				break;
+			case 305:
+				System.out.println("人數小於30大於等於20人");
+				break;
+			default:
+				System.out.println("其他");
 			}
 		}
 

@@ -5,7 +5,6 @@ public class TestEmployeeArray {
 	public static void main(String[] args) {
 
 		{
-<<<<<<< HEAD
 			Employee[] emps = new Employee[2];
 
 			// 寫法一:
@@ -26,7 +25,9 @@ public class TestEmployeeArray {
 			for (int i = 0; i < emps.length; i++) {
 				System.out.printf("員工編號: %d, 員工姓名: %s%n", emps[i].empno, emps[i].name);
 			}
-=======
+		}
+
+		{
 			// 第一種寫法:
 			Employee[] emps = new Employee[2];
 			Employee emp1 = new Employee();
@@ -59,17 +60,15 @@ public class TestEmployeeArray {
 			emps[0] = new Employee();
 			emps[0].empno = 1;
 			emps[0].name = "Vincent";
-			
+
 			emps[1] = new Employee();
 			emps[1].empno = 2;
 			emps[1].name = "David";
-			
-			for(int i = 0; i < emps.length; i++) {
+
+			for (int i = 0; i < emps.length; i++) {
 				System.out.printf("員工編號: %d 員工姓名: %s%n", emps[i].empno, emps[i].name);
 			}
-			
 
->>>>>>> e52fc189ceff6b2c112aa383ccefbd3a24292630
 		}
 
 	}
