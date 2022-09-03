@@ -1,0 +1,20 @@
+package encap;
+
+public class Car {
+
+	private String model;
+	int price;
+
+	// 設定 model 屬性的方法
+	public void setModel(String model) {
+		// 把傳入的參數 m 設到屬性 model 上
+		model = m;
+
+	}
+
+	// 取得 model 屬性值得方法
+	public String getModel() {
+		return model;
+	}
+
+}

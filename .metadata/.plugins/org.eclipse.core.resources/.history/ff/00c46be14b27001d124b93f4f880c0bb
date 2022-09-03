@@ -1,0 +1,15 @@
+package encap;
+
+public class TestCar {
+
+	public static void main(String[] args) {
+
+		Car c = new Car();
+		// c.model = "Prius"
+		c.setModel("Yaris");
+		// c.price = 1099000;
+		System.out.printf("售出: %s, %d 元%n", c.getModel(), c.getPrice());
+		
+	}
+
+}

@@ -1,0 +1,14 @@
+package encap;
+
+public class Car {
+
+	private String model;
+	int price;
+	
+	public void setModel(String m) {
+		// 把傳入的參數 m 設到屬性 model 上
+		model = m;
+		
+	}
+	
+}
