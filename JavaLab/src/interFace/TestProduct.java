@@ -11,51 +11,52 @@ public class TestProduct {
 		Product pd = new Product("筆記本", 50);
 		System.out.printf("名稱: %s, 價錢: %d%n", pd.getName(), pd.getPrice());
 
-//		多型: Notebook, Product
+		// 多型: Notebook, Product
 //		Product nb = new Notebook("Asus", 30000, 365);
 		Notebook nb = new Notebook("Asus", 30000, 365);
 		System.out.printf("名稱: %s, 價錢: %d%n", nb.getName(), nb.getPrice());
 		System.out.println(nb.name); // 同一個 package 才能有 protected 效果
 		System.out.println(nb.desc());
 		System.out.println(nb.getWarranty());
-		
-//		多型範例:
+
+		// 多型範例:
 		Product item = nb; // Notebook 是 Product 的一種嗎? : 是
 		System.out.println(item.desc());
-//		            就像是 Product.desc()，但實際是呼叫 Notebook 裡面的 desc()
-				
-//		強制轉型:
-		Notebook item2 = (Notebook)item; // Product 是　Notebook 的一種嗎?
-//		強制轉型發生失敗: 須加上 if 條件做檢查
+		// 就像是 Product.desc()，但實際是呼叫 Notebook 裡面的 desc()
+
+		// 強制轉型:
+		Notebook item2 = (Notebook) item; // Product 是 Notebook 的一種嗎?
+		// 強制轉型發生失敗: 須加上 if 條件做檢查
 		if (item instanceof Food) {
-//			如果 item 有 Food 型態，才做強制轉型，避免發生問題
-			Food item3 = (Food)item; // Product 是 Food 的一種嗎?			
+			// 如果 item 有 Food 型態，才做強制轉型，避免發生問題
+			Food item3 = (Food) item; // Product 是 Food 的一種嗎?
 		}
 
-//		Product 裡面沒有 getWarrenty 所以無法呼叫
+		// Product 裡面沒有 getWarrenty 所以無法呼叫
 //		System.out.println(item.getWarranty());		
 
 //		buy(nb)
 
-//		GregorianCalendar 代表西曆
-//		GregorianCalendar calendar = new GregorianCalendar(2022,8,5); // 因為 0 起算。所以要打 8，才會跳成 9 月 
-		GregorianCalendar calendar = new GregorianCalendar(2022, Calendar.SEPTEMBER, 5);
-//		getTime() 可以取得 Date 物件，Date 物件是 calendar 程式幫你產生在 heap 區
+		// GregorianCalendar 代表西曆
+		// GregorianCalendar calendar = new GregorianCalendar(2022,8,5); // 因為 0 起算。所以要打
+		// 8，才會跳成 9 月
+		GregorianCalendar calendar = new GregorianCalendar(2022, Calendar.SEPTEMBER, 4);
+		// getTime() 可以取得 Date 物件，Date 物件是 calendar 程式幫你產生在 heap 區
 		Date expDate = calendar.getTime();
 
 		Food f = new Food("肉圓", 50, expDate);
 		System.out.println(f.desc());
 
 //		buy(f);
-		
+
 		GregorianCalendar calendar1 = new GregorianCalendar(2022, Calendar.SEPTEMBER, 30);
-//		getTime() 可以取得 Date 物件，Date 物件是 calendar 程式幫你產生在 heap 區
+		// getTime() 可以取得 Date 物件，Date 物件是 calendar 程式幫你產生在 heap 區
 		Date expDate1 = calendar1.getTime();
 		SimCard sCard = new SimCard("日本漫遊", 700, 7, expDate1);
 		System.out.println(sCard.desc());
 
-//		很多商品: 利用陣列以及多型
-		Product[] ps = { nb, f };
+		// 很多商品: 利用陣列以及多型
+		Product[] ps = { nb, f, sCard };
 		buy(ps);
 	}
 
@@ -75,6 +76,21 @@ public class TestProduct {
 		for (int i = 0; i < items.length; i++) {
 			Product p = items[i];
 			System.out.println("買入: " + p.desc());
+			// 檢查商品是否過期，如果過期，發出警示，不能加到 sum
+			// 只有 Food, SimCard 會過期
+			// 利用 Expirable 型態做判斷，因為所有的子類別，只要會過期，就必須實做 Expirable
+			if (p instanceof Expirable) {
+				// 取得目前時間
+				Date now = new Date();
+				// 把 p 轉型成 Expirable，才能呼叫最後期限，取得到期日
+				Expirable exp = (Expirable) p;
+				// 判斷到期日是否過期
+				if (exp.最後期限().before(now)) {
+					System.out.println("過期了!!");
+					// 不結帳，繼續處理下一個商品
+					continue;
+				}
+			}
 			sum += p.getPrice();
 		}
 		System.out.printf("總金額: %d%n", sum);

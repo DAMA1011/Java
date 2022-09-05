@@ -28,7 +28,7 @@ public class Notebook extends Product implements Warrantable {
 	// 產生 Override
 	@Override // 另一種註解，協助檢查語法，側邊有向上箭號，可以開啟父類別所在位置
 	public String desc() { // 改寫父類別的 description 內容
-		String info = String.format("商品名稱: %s, 售價: NT$ %d元, 保固 %d 天", name, price, warranty);
+		String info = String.format("商品名稱: %s,售價: NT$%d 元,保固 %d 天", name, price, warranty);
 		return info;
 	}
 	// 先拿到父類別產生的文字(super.desc())，再針對該文字進行加工，此寫法比上方的好，當修改父類別時，可以同時修改所有子類別
