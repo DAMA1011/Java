@@ -1,4 +1,4 @@
-package extend;
+package interFace;
 
 // 如果改為抽象類別(abstract class)，要變成 public abstract class Product
 public class Product {
@@ -30,7 +30,7 @@ public class Product {
 
 	// description: 描述此商品
 	public String desc() {
-		String info = String.format("商品名稱: %s, 售價: NT$%d元", name, price);
+		String info = String.format("商品名稱: %s,售價: NT$%d 元", name, price);
 		return info;
 	}
 

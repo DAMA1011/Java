@@ -1,16 +1,14 @@
-package extend;
+package interFace;
 
 //            子類別            父類別
-public class Notebook extends Product {
+public class Notebook extends Product implements Warrantable {
 
-	// public String name; // 繼承之後，可以不用打這兩條
-	// public int price;
 	public int warranty; // 保固天數
 
-	// 實作從父類別繼承來的抽象方法
-	// public int calc(int quantity) {
-	// return price * quantity;
-	// }
+	@Override
+	public int 保固天數() { // 改寫父類別的內容
+		return this.warranty;
+	}
 
 	// 產生 Constructor
 	public Notebook(String name, int price, int warranty) {
@@ -30,7 +28,7 @@ public class Notebook extends Product {
 	// 產生 Override
 	@Override // 另一種註解，協助檢查語法，側邊有向上箭號，可以開啟父類別所在位置
 	public String desc() { // 改寫父類別的 description 內容
-		String info = String.format("商品名稱: %s, 售價: NT$ %d元, 保固 %d 天", name, price, warranty);
+		String info = String.format("商品名稱: %s,售價: NT$%d 元,保固 %d 天", name, price, warranty);
 		return info;
 	}
 	// 先拿到父類別產生的文字(super.desc())，再針對該文字進行加工，此寫法比上方的好，當修改父類別時，可以同時修改所有子類別
