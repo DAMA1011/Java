@@ -29,7 +29,7 @@ public class Product {
 	// public abstract int calc(int quantity);
 
 	// description: 描述此商品
-	public String disc() {
+	public String desc() {
 		String info = String.format("商品名稱: %s, 售價: NT$%d元", name, price);
 		return info;
 	}
