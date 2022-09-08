@@ -3,8 +3,8 @@ package encap;
 public class Car {
 
 	private String model;
-	private int price;
 	private String color;
+	private int price;
 
 	// Constructor: 建構方法
 	public Car(String color) {
@@ -22,14 +22,6 @@ public class Car {
 	public Car(String model, String color) {
 		// this.model = model; // 跟下方的 setModel(String model) 重複了
 		setModel(model); // 要呼叫下方的 setModel，才會把 price 帶入
-		this.color = color;
-	}
-
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
 		this.color = color;
 	}
 
@@ -55,6 +47,14 @@ public class Car {
 	public String getModel() {
 		return model; // 也可以寫 this.model
 
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getColor() {
+		return color;
 	}
 
 	public int getPrice() {
