@@ -21,9 +21,9 @@ public class Product {
 		this.price = price;
 	}
 
-	public Product() {
-
-	}
+//	public Product() {
+//
+//	}
 
 	// 產生 abstract: 沒有實作，只有定義，須把該類別(class)加上 abstract
 	// public abstract int calc(int quantity);
