@@ -19,14 +19,14 @@ public class ShoppingCart {
 
 		// 實作2.利用 for 迴圈，計算 shoppingList 中的總金額,並印在 Console 中
 //		int sum = 0;
-		Iterator<Product> it = shoppingList.iterator();
-		while(it.hasNext()) {
-			Object pd = it.next();
-			System.out.println(pd);
-		}
-		System.out.println(shoppingList.get(1));
+//		for each 迴圈
 		
 //		System.out.printf("總金額: %d%n", sum);
+		
+//	if (it instanceof type) {
+//		type new_name = (type) it;
+//		
+//	}
 
 		// 實作3.利用 for 迴圈，加總 shoppingList 中是 Notebook 型態的總金額,並印在 Console 中
 //		System.out.println(p3.getPrice());

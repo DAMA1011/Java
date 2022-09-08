@@ -22,14 +22,14 @@ public class MapTest {
 		// 實作2: 請用 for 迴圈或者 iterator，利用實作 1 的 Map 計算三人的平均年齡至少到小數第一位
 		Set<String> keys = map.keySet();
 		Iterator<String> it = keys.iterator();
-		int sum = 0;
+		double sum = 0;
 		while (it.hasNext()) {
 			String key = it.next();
 			Integer age = (Integer) map.get(key);
 			sum += age;
 		}
 		// System.out.println(sum);
-		int s = map.size();
+		double s = map.size();
 		double avg = sum / s;
 		System.out.printf("平均年齡: %.1f%n", avg);
 
